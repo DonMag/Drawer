@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8M-tJ-Rno">
-                                <rect key="frame" x="232" y="20" width="137" height="30"/>
+                                <rect key="frame" x="154" y="40" width="293" height="30"/>
                                 <color key="backgroundColor" red="0.9391769255050505" green="0.9391769255050505" blue="0.9391769255050505" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Fn-eH-7kw"/>
-                                    <constraint firstAttribute="width" constant="137" id="v0c-Eq-jqL"/>
+                                    <constraint firstAttribute="width" constant="293" id="v0c-Eq-jqL"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Open / Close Drawer"/>
                                 <connections>
                                     <action selector="bTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsC-Hm-Ym4"/>
                                 </connections>
@@ -32,7 +32,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.65532144550000004" blue="0.59188186129999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="l8M-tJ-Rno" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RLX-Eh-nrq"/>
+                            <constraint firstItem="l8M-tJ-Rno" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="RLX-Eh-nrq"/>
                             <constraint firstItem="l8M-tJ-Rno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YlT-fT-vcT"/>
                         </constraints>
                     </view>
