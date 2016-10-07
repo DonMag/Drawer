@@ -2,7 +2,7 @@
 //  InfoDrawerView.swift
 //  Drawer
 //
-//  Created by Don Magnusson on 5/31/16.
+//  Created by DonMag on 5/31/16.
 //  Copyright © 2016 DonMag. All rights reserved.
 //
 

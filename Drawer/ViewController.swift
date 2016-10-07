@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Drawer
 //
-//  Created by Don Magnusson on 5/31/16.
+//  Created by DonMag on 5/31/16.
 //  Copyright © 2016 DonMag. All rights reserved.
 //
 
@@ -20,6 +20,13 @@ extension UIView {
 
 class ViewController: UIViewController {
 
+	
+	@IBOutlet weak var leftButton: UIButton!
+	@IBOutlet weak var rightButton: UIButton!
+	
+	@IBOutlet weak var lbWidth: NSLayoutConstraint!
+	@IBOutlet weak var rbLeading: NSLayoutConstraint!
+	
 	var gDrawerView: InfoDrawerView?
 	var gBottomConstraint: NSLayoutConstraint?
 
@@ -88,13 +95,37 @@ class ViewController: UIViewController {
 	
 	}
 
+	@IBAction func rbTapped(sender: AnyObject) {
+		
+		lbWidth.constant = lbWidth.constant == 0.5 ? 0 : 0.5
+		rbLeading.constant = lbWidth.constant == 0 ? 0 : 20
+		
+		self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: [.CurveEaseIn, .CurveEaseOut],
+			completion: nil
+		)
+		
+	}
+	
+	@IBAction func lbTapped(sender: AnyObject) {
+		
+		lbWidth.constant = lbWidth.constant == 140 ? 0 : 140
+		rbLeading.constant = lbWidth.constant == 0 ? 0 : 20
+		
+		self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: [.CurveEaseIn, .CurveEaseOut],
+			completion: nil
+		)
+		
+	}
+	
 	@IBAction func bTapped(sender: AnyObject) {
 
+		let opts: UIViewAnimationOptions = [UIViewAnimationOptions.CurveEaseIn, UIViewAnimationOptions.CurveEaseOut]
+		
 		if gBottomConstraint?.constant == 0 {
 			// the drawer is "open", so slide it down and set to hidden
 			
 			gBottomConstraint?.constant = 70
-			self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: [],
+			self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: opts,
 				completion:
 				{(finished:Bool)->Void in self.gDrawerView?.hidden = true }
 			)
@@ -104,9 +135,11 @@ class ViewController: UIViewController {
 			
 			gDrawerView?.hidden = false
 			gBottomConstraint?.constant = 0
-			self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: [],
+			
+			self.view.animateConstraintWithDuration(0.25, delay: 0.0, options: [.CurveEaseIn, .CurveEaseOut],
 				completion: nil
 			)
+			
 			
 		}
 		

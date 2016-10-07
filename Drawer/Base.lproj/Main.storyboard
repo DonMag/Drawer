@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,13 +30,53 @@
                                     <action selector="bTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsC-Hm-Ym4"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-5K-J9H">
+                                <rect key="frame" x="150" y="185" width="300" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMn-fC-FYn">
+                                        <rect key="frame" x="10" y="0.0" width="140" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Left"/>
+                                        <connections>
+                                            <action selector="lbTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHj-nn-5Mo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESg-Hf-hIt">
+                                        <rect key="frame" x="170" y="0.0" width="120" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Right"/>
+                                        <connections>
+                                            <action selector="rbTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cST-vq-0ZZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54434974749999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ESg-Hf-hIt" firstAttribute="centerY" secondItem="eeC-5K-J9H" secondAttribute="centerY" id="TqF-hn-w5e"/>
+                                    <constraint firstItem="SMn-fC-FYn" firstAttribute="width" secondItem="eeC-5K-J9H" secondAttribute="width" multiplier="0.5" constant="-10" id="cJ3-lV-RoG"/>
+                                    <constraint firstAttribute="height" constant="30" id="dRw-Ex-d0K"/>
+                                    <constraint firstItem="SMn-fC-FYn" firstAttribute="leading" secondItem="eeC-5K-J9H" secondAttribute="leading" constant="10" id="dXA-cq-JeX"/>
+                                    <constraint firstItem="SMn-fC-FYn" firstAttribute="centerY" secondItem="eeC-5K-J9H" secondAttribute="centerY" id="eJG-IT-LID"/>
+                                    <constraint firstItem="ESg-Hf-hIt" firstAttribute="leading" secondItem="SMn-fC-FYn" secondAttribute="trailing" constant="20" id="gKO-Nl-gEb"/>
+                                    <constraint firstAttribute="width" constant="300" id="tif-zW-kkA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ESg-Hf-hIt" secondAttribute="trailing" constant="10" id="uzT-Vb-Gtc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.65532144550000004" blue="0.59188186129999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eeC-5K-J9H" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="165" id="QYT-Gz-r0B"/>
                             <constraint firstItem="l8M-tJ-Rno" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="RLX-Eh-nrq"/>
+                            <constraint firstItem="eeC-5K-J9H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSl-g3-9i3"/>
                             <constraint firstItem="l8M-tJ-Rno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YlT-fT-vcT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbWidth" destination="cJ3-lV-RoG" id="u5g-Z8-qsB"/>
+                        <outlet property="leftButton" destination="SMn-fC-FYn" id="NIx-FB-q6w"/>
+                        <outlet property="rbLeading" destination="gKO-Nl-gEb" id="Ht2-r7-w3U"/>
+                        <outlet property="rightButton" destination="ESg-Hf-hIt" id="1cd-AO-g3P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
